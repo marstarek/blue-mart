@@ -22,7 +22,7 @@ function navTo (id) {
       className="h-96 w-full rounded-t-lg object-cover md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
       src={`${product.image}`}
       alt="" />
-    <div className="flex flex-col justify-around p-6" >
+    <div className="flex flex-col justify-around p-6 flex-grow " >
       <h5
         className="mb-2 text-xl font-medium text-neutral-800 dark:text-neutral-50">
         {product.title}
@@ -32,7 +32,7 @@ function navTo (id) {
       </p>
       <p className="badge text-xs  border-0 bg-blue-300"> {product.category} </p>
 
-      <button className="btn  text-white border-0 bg-gradient-to-r from-blue-600 to-blue-400 " onClick={() =>{addProducts({ id:product.id, title:product.title, image:product.image, price:product.price,quantity: 1 }) 
+      <button className="btn w-full  text-white border-0 bg-gradient-to-r from-blue-600 to-blue-400 " onClick={() =>{addProducts({ id:product.id, title:product.title, image:product.image, price:product.price,quantity: 1 }) 
               }
         } > Add To Cart <MdAddShoppingCart className="text-lg"/>
         </button>
