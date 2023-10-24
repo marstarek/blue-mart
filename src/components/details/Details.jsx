@@ -1,16 +1,24 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getproduct } from "../../store/productSlice";
+import { addTocart, decrementQuantity, getproduct, incrementQuantity, removeItem } from "../../store/productSlice";
 import Loader from "../../utlis/Loader";
 import Navbar from "../navbar/Navbar";
+import { FaRegTrashAlt } from "react-icons/fa";
+
 const Details = () => {
   let { id } = useParams();
-  const dispatch = useDispatch();
+  const  {cart}  = useSelector((state) => state.products);
 
+  const dispatch = useDispatch();
+  const addProducts = (product) => { 
+    dispatch(addTocart({ ...product }))
+
+   }
+  let cardd = cart.filter((item) => item.id == id)
+  console.log(cardd)
   useEffect(() => {
-    dispatch(getproduct(id))
-      .unwrap()
+    dispatch(getproduct(id)).unwrap()
       .then((data) => console.log(data));
   }, [id]);
   const { isLoading, product } = useSelector((state) => state.products);
@@ -46,7 +54,7 @@ const Details = () => {
         <div className="flex items-center space-x-4 my-4">
           <div>
             <div className="rounded-lg bg-gray-100 flex py-2 px-3">
-              <span className="text-indigo-400 mr-1 mt-1 font-bold text-indigo-600 text-3xl">{product.price}$</span>
+              <span className=" mr-1 mt-1 font-bold text-indigo-600 text-3xl">{product.price}$</span>
             </div>
           </div>
           <div className="flex-1">
@@ -56,13 +64,37 @@ const Details = () => {
         </div>
 
         <p className="text-gray-500">{product.description}</p>
-
-        <div className="flex py-4 space-x-4">
-        
-          <button type="button" className="h-14 px-6 py-2 font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white">
-            Add to Cart
-          </button>
+                        <div className=" flex justify-between items-center">
+                        <div className="flex py-4 space-x-4">
+        <button className="btn  text-white border-0 bg-gradient-to-r from-blue-600 to-blue-400 " onClick={() =>{addProducts({ id:product.id, title:product.title, image:product.image, price:product.price,quantity: 1 }) 
+              }
+        } > Add To Cart 
+        </button>
         </div>
+          <div className="flex items-center border-gray-100">
+            <span
+              className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"
+              onClick={() => dispatch(decrementQuantity(product.id))}
+            >
+              -
+            </span>
+                            <span className=" rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50">
+                              {cart?.length>=1?cart?.filter((item) => item.id == id).map((item) => (<span key={item.id}>{item.quantity}</span>)):0}
+            
+            </span>
+
+            <span
+              className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"
+              onClick={() => dispatch(incrementQuantity(product.id))}
+            >+</span>
+          </div>
+          <div className="flex items-center mx-2 "  >
+          <button className="btn  text-white border-0 bg-gradient-to-r from-rose-600 to-rose-400 " onClick={() => dispatch(removeItem(product.id))}
+         > <FaRegTrashAlt></FaRegTrashAlt> 
+        </button>
+          </div>
+        </div>
+        
       </div>
     </div>
                 </div>

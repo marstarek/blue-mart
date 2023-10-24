@@ -69,6 +69,11 @@ const productslice = createSlice({
       const removeItem = state.cart.filter((item) => item.id !== action.payload);
       state.cart = removeItem;
     },
+    emptyCart: (state, action) => {
+      while (state.cart.length > 0) {
+        state.cart.pop();
+      }      
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -104,7 +109,7 @@ export const {
   addTocart,
   incrementQuantity,
   decrementQuantity,
-  removeItem,
+  removeItem,emptyCart
 } = productslice.actions;
 
 

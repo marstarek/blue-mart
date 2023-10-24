@@ -1,10 +1,10 @@
 
 const Loader = () => {
   return (
-     <div role="status" className="col-span-4 flex justify-center">
+     <div role="status" className="col-span-4 flex justify-center w-full h-full items-center">
      <svg
        aria-hidden="true"
-       className=" text-white-400 mr-2 h-16 w-16 animate-spin fill-yellow-500 dark:text-gray-600"
+       className=" text-white-400 mr-2 h-16 w-16 animate-spin fill-blue-500 dark:text-gray-600"
        viewBox="0 0 100 101"
        fill="none"
        xmlns="http://www.w3.org/2000/svg"

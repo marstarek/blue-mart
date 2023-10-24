@@ -6,7 +6,29 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+#root{
+    height: 100%;
+}
 body {
     min-height: 100vh;
+    height: 100vh;
+}
+.react-international-phone-input{
+    flex-grow: 1 !important;
+    height: 3rem !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1rem;
+    line-height: 2;
+    line-height: 1.5rem;
+    border-width: 1px;
+    border-color: hsl(var(--bc) / var(--tw-border-opacity));
+    --tw-border-opacity: 0;
+    --tw-bg-opacity: 1;
+    background-color: hsl(var(--b1) / var(--tw-bg-opacity));
+    border-radius: var(--rounded-btn, 0.5rem);
+
+}
+.react-international-phone-country-selector-button{
+    height: 3rem !important;  
 }

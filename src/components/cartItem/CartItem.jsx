@@ -27,8 +27,7 @@ const CartItem = ({ id, image, title, price, quantity = 0 }) => {
               className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"
               onClick={() => dispatch(decrementQuantity(id))}
             >
-              {" "}
-              -{" "}
+              -
             </span>
             <span className=" rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50">
               {quantity}

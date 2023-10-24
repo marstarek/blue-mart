@@ -10,7 +10,7 @@ const Product = ({ product }) => {
 function coco (id) {
   nav(`/details/${id}`)
   }
-  const haha = (product) => { 
+  const addProducts = (product) => { 
     dispatch(addTocart({ ...product }))
 
    }
@@ -40,7 +40,7 @@ function coco (id) {
           </div>
           
         </div>
-        <button className="btn  text-white border-0 bg-gradient-to-r from-blue-600 to-blue-400 m-4" onClick={() =>{haha({ id:product.id, title:product.title, image:product.image, price:product.price,quantity: 1 }) 
+        <button className="btn  text-white border-0 bg-gradient-to-r from-blue-600 to-blue-400 m-4" onClick={() =>{addProducts({ id:product.id, title:product.title, image:product.image, price:product.price,quantity: 1 }) 
               }
         } > Add To Cart <MdAddShoppingCart className="text-lg"/>
         </button>

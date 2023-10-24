@@ -2,31 +2,31 @@ import { useEffect,useState } from "react"
 import Product from "../product/Product";
 import Loader from "../../utlis/Loader";
 import Fuse from 'fuse.js';
-const List = ({ products, isLoading }) => {
-  const [query, updateQuery] = useState('');
-  const fuse = new Fuse(products, {keys: ['title']});
+import { BsFillGridFill,BsCardList } from "react-icons/bs";
+import {MdOutlineTableRows } from "react-icons/md";
+import HorizProduct from "../product/HorizProduct";
 
-  function onSearch({ currentTarget }) {
-    updateQuery(currentTarget.value);
-    setFilterdProducts( query ? results.map(character => character.item) : products);
-  }
-  const results = fuse.search(query);
-  const characterResults = query ? results.map(character => character.item) : products;
-  console.log(characterResults)
-  const [filterdProducts, setFilterdProducts] = useState(products);
-     useEffect(() => {
-      setFilterdProducts(products)
-     }, []);
+const List = ({ products, isLoading }) => {
+  const [view, setView] = useState(true);
+
   return (
      <>
-     <h1 className="bg-gradient-to-r from-blue-600 to-blue-300 bg-clip-text py-8 text-center text-5xl font-extrabold text-transparent">
-       Our Products 
-      </h1>
+    
      
 
-     <div>
-       <div className="w-fit container mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
-         {isLoading ?<Loader/>: products?.map((product) => <Product product={product} key={product.id}/>)}
+      <div>
+      <div className="flex justify-end  items-center w-full  mx-auto  gap-2 py-2 container px-4">
+           <button className="btn  text-white border-0 bg-gradient-to-r  text-xl p-3 from-gray-600 to-gray-400 " id="grid"
+             onClick={(e) => setView(true)}> <BsFillGridFill></BsFillGridFill> 
+           </button>
+           <button className="btn  text-white border-0 bg-gradient-to-r text-xl  p-3  from-gray-600 to-gray-400 " id="list"
+             onClick={(e) => setView(false)}> <MdOutlineTableRows></MdOutlineTableRows> 
+           </button>
+       
+         </div>
+        <div className={`w-fit container mx-auto grid ${view?"grid-cols-1 lg:grid-cols-3 md:grid-cols-2":"grid-cols-1"}  justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5 px-4`}>
+          
+         {isLoading ?<Loader/>:view? products?.map((product) => <Product product={product} key={product.id}/>):products?.map((product) => <HorizProduct product={product} key={product.id}/>)}
        </div>
 
        
