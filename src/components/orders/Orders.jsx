@@ -26,6 +26,12 @@ const Orders = () => {
     <>
       <Navbar />
       <div className="card-body flex flex-col">
+        <div className="text-center ">
+        <h1 className="bg-gradient-to-r from-blue-600 to-blue-300 bg-clip-text p-0 text-center text-3xl font-extrabold text-transparent">Blue Cart</h1>
+        <p className="text-md">Review Your Order</p>
+
+
+        </div>
         {cart?.length >= 1 ? (
           cart?.map((item) => (
             <CartItem
@@ -38,18 +44,30 @@ const Orders = () => {
             />
           ))
         ) : (
-          <p className="empty text-dark">Cart is empty</p>
+          <div className=" flex justify-center items-center">
+          <div className="badge badge-info gap-2 text-white">
+          Cart is empty!
+           </div>
+
+        </div>
+
+          
+         
+      
         )}
         <div className="card-actions flex justify-between items-center">
           <span className="text-lg font-semibold text-blue-500">
             Subtotal: {getTotal().totalPrice}
           </span>
-          <Link to={"/orderform"}>
-            <button className="btn  text-white border-0 bg-gradient-to-r from-blue-600 to-blue-400 m-4">
+          {cart?.length >= 1 ?  <Link to={"/orderform"}>
+            <button className="btn  text-white border-0 bg-gradient-to-r from-blue-600 to-blue-400  ">
               {" "}
             Order Now
             </button>
-          </Link>
+          </Link>:null
+
+          }
+        
         </div>
       </div>
     </>

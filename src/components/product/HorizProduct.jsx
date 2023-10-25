@@ -47,43 +47,6 @@ function navTo (id) {
 
 
 
-      // <div className="h-96 card bg-base-100 shadow-2xl" key={product.id} >
-      
-      //     <figure className="h-50" onClick={()=>navTo(product.id)}>
-      //       <img
-      //         src={`${product.image}`}
-      //         alt="product"
-      //         className=" rounded-t-xl h-full"
-      //       />
-      // </figure>
-      
-      //   <div className="card-body p-2 sm:p-2 md:p-4  lg:p-5 xl:p-6 " onClick={()=>navTo(product.id)}>
-      //     <h2 className="card-title ">{product.title}</h2>
-
-      //   <div className="card-actions   items-center flex flex-col">
-      //     <div className="flex w-full items-center">
-      //     <p className=" text-2xl font-bold ">
-      //         {product.price}$
-      //         </p>
-      //         <p className="badge  border-0 bg-blue-300"> {product.category} </p>
-
-      //     </div>
-          
-       
-
-      //         <button className="btn  text-white border-0 bg-gradient-to-r from-blue-600 to-blue-400 " onClick={() =>{addProducts({ id:product.id, title:product.title, image:product.image, price:product.price,quantity: 1 }) 
-      //         }
-      //   } > Add To Cart <MdAddShoppingCart className="text-lg"/>
-      //   </button>
-
-      //     </div>
-          
-      //   </div>
-       
-       
-      // </div>
-  
-
   );
 };
 

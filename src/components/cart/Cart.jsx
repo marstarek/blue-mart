@@ -38,18 +38,30 @@ const getTotal = () => {
              />
       
       
-                   )):<p className="empty text-dark">Cart is empty</p>
-                   
+        )) :
+            
+            
+            <div className=" flex justify-center items-center">
+              <div className="badge badge-info gap-2 text-white">
+              Cart is empty!
+               </div>
+
+            </div>                   
                    }
-                      <div className="card-actions flex justify-between items-center">
+                      
+          {
+
+          }
+          {cart?.length >= 1 ? <div className="card-actions flex justify-between items-center">
                       <span className="text-lg font-semibold text-blue-500">Subtotal: {getTotal().totalPrice}</span>
                            <Link to={"/orders"}>
-                           <button className="btn  text-white border-0 bg-gradient-to-r from-blue-600 to-blue-400 m-4"> Review Order</button>
+                           <button className="btn  text-white border-0 bg-gradient-to-r from-blue-600 to-blue-400 m-4 "> Review Order</button>
                            
                            </Link>
                         
 
-          </div>
+          </div>:null }
+          
         </div>
       </div>
     </div>

@@ -16,10 +16,10 @@ const List = ({ products, isLoading }) => {
 
       <div>
       <div className="flex justify-end  items-center w-full  mx-auto  gap-2 py-2 container px-4">
-           <button className="btn  text-white border-0 bg-gradient-to-r  text-xl p-3 from-gray-600 to-gray-400 " id="grid"
+           <button className="  text-blue-700 hover:text-black  text-2xl  " id="grid"
              onClick={(e) => setView(true)}> <BsFillGridFill></BsFillGridFill> 
            </button>
-           <button className="btn  text-white border-0 bg-gradient-to-r text-xl  p-3  from-gray-600 to-gray-400 " id="list"
+           <button className=" text-blue-700 hover:text-black  text-3xl " id="list"
              onClick={(e) => setView(false)}> <MdOutlineTableRows></MdOutlineTableRows> 
            </button>
        

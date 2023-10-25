@@ -14,7 +14,7 @@ const CartItem = ({ id, image, title, price, quantity = 0 }) => {
       <img
         src={image}
         alt="product-image"
-        className="w-full rounded-lg sm:w-16"
+        className=" rounded-lg w-16 h-16 "
       />
       <div className="sm:ml-4 sm:flex sm:w-full sm:justify-between items-center">
         <div className=" sm:mt-0">
