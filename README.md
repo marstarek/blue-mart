@@ -46,7 +46,3 @@ order.
 ![img1](img1.png?raw=true "Title")
 ![img2](img2.png?raw=true "Title")
 ![img3](img3.png?raw=true "Title")
-![img4](img4.png?raw=true "Title")
-![img5](img5.png?raw=true "Title")
-![img6](img6.png?raw=true "Title")
-![img7](img7.png?raw=true "Title")
