@@ -37,7 +37,8 @@ order.
 
  link to demo
 
-[deployed on  surge ](https://gleaming-holiday.surge.sh/)
+[deployed on  surge ](https://auspicious-cattle.surge.sh/)
+
 [deployed on  vercel ](https://blue-mart.vercel.app/)
 
 ## images
