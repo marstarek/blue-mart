@@ -18,7 +18,7 @@ function coco (id) {
     
       <div className="h-96 card bg-base-100 shadow-2xl" key={product.id} >
       
-          <figure className="h-50" onClick={()=>coco(product.id)}>
+          <figure className="h-50 py-2" onClick={()=>coco(product.id)}>
             <img
               src={`${product.image}`}
               alt="product"
