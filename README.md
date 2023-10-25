@@ -11,7 +11,6 @@ order.
 - handel asynchronous calls with Redux Thunk 
 - form validation with  react Hook form
 - using Vite  module bundler
-- using react query
 - using react router
 - using tailwindcss and daisyui  for styling
 - using fuse.js
